@@ -31,7 +31,7 @@ print("Type images: ", type(images[0]))
 print("Type image_data: ", type(image_data[0]))
 
 #Preprocessing der Daten
-# Remove mean
+#Remove mean
 image_data = np.array(image_data)
 mean_value = np.mean(image_data)
 print("Global Mean des Datensatzes: ", mean_value)
