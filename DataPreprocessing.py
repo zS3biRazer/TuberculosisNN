@@ -4,16 +4,14 @@ import PIL
 from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
-import tensorflow as tf
+#import tensorflow as tf
 
 #Versionen von Scipy, Pillow und Tensorflow abfragen
 #print("scipy version: ", scp.__version__) #only works after loading: source /mount/packs/tensorflow/bin/activate
 #print("Pillow version: ", PIL.__version__)
 #print("TensorFlow version:", tf.__version__)
 
-
 path = r"C:\Users\sebi6\TuberculosisNNnoGitHubShare\AllData\data\all\preprocessed"
-
 filenames = []
 for root, dirs, files in os.walk(path, topdown=False):
         for name in files:
@@ -29,7 +27,7 @@ print("Number of files: ", len(images))
 print("File dimensions: ", image_data[0].shape)
 print("Type images: ", type(images[0]))
 print("Type image_data: ", type(image_data[0]))
-
+print(image_data[0])
 #Preprocessing der Daten
 #Remove mean
 image_data = np.array(image_data)
@@ -46,8 +44,7 @@ image_data = image_data /std_value
 image_data = image_data[:,:,:,np.newaxis] #Gegeben im Jupiter Notebook
 
 print("Image data shape: ", image_data.shape)
-print("Expected shape: (138, 512, 512, 1)") #Trotzdem noch 1104 Bilder und nicht 138 warum?
-
+print("Expected shape: (138, 512, 512, 1)")
 
 
 labels = []
